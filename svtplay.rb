@@ -74,7 +74,7 @@ class SvtPlay
 		create_download_dir
 		dst = "#{download_dir + "/" + mp4_filename_from_url(rtmp)}"
 		p "Downloading #{rtmp} to #{dst}"
-		system("rtmpdump", "-r", rtmp, "-o", dst)
+		system("rtmpdump", "-r", rtmp, "--swfVfy", "http://svtplay.se/flash/svtplayer-2012.1.swf", "-o", dst)
 	end
 	
 end
